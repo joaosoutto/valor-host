@@ -1,5 +1,4 @@
-import React, { useState, Suspense } from "react";
-import reactLogo from "./assets/react.svg";
+import React, { Suspense } from "react";
 import "./App.css";
 
 const RemoteApp = React.lazy(() => import("remoteApp/App"));
