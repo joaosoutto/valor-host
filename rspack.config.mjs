@@ -73,7 +73,7 @@ export default withZephyr()({
         './App': './src/App.jsx',
       },
       remotes: {
-       remoteApp: 'remote@https://joao-soutto-236-rspack-react-starter-valor-remote-0822415e5-ze.zephyrcloud.app/remoteEntry.js',
+       remoteApp: 'remote@http://localhost:8081/remoteEntry.js',
       },
       shared: {
         react: { singleton: true, eager: true, requiredVersion: '^19.1.0' },

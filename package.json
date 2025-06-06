@@ -1,7 +1,13 @@
 {
   "name": "valor-mf-host",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development rspack serve",
     "build": "cross-env NODE_ENV=production rspack build"

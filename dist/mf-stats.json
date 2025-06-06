@@ -1,0 +1,114 @@
+{
+  "id": "host",
+  "name": "host",
+  "metaData": {
+    "name": "host",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "1.0.0",
+      "buildName": "valor-mf-host"
+    },
+    "remoteEntry": {
+      "name": "remoteEntry.js",
+      "path": "",
+      "type": "global"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "host",
+    "pluginVersion": "0.15.0",
+    "prefetchInterface": false,
+    "publicPath": "http://localhost:8080/"
+  },
+  "shared": [
+    {
+      "singleton": true,
+      "requiredVersion": "^19.1.0",
+      "shareScope": "default",
+      "eager": true,
+      "name": "react",
+      "version": "19.1.0",
+      "id": "host:react",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "remoteEntry.js",
+            "main.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "main.css"
+          ]
+        }
+      },
+      "usedIn": []
+    },
+    {
+      "singleton": true,
+      "requiredVersion": "^19.1.0",
+      "shareScope": "default",
+      "eager": true,
+      "name": "react-dom",
+      "version": "19.1.0",
+      "id": "host:react-dom",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "remoteEntry.js",
+            "main.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "main.css"
+          ]
+        }
+      },
+      "usedIn": []
+    }
+  ],
+  "remotes": [
+    {
+      "alias": "remoteApp",
+      "consumingFederationContainerName": "host",
+      "federationContainerName": "remote",
+      "moduleName": "App",
+      "usedIn": [
+        "src/main.jsx + 1 modules"
+      ],
+      "entry": "http://localhost:8081/remoteEntry.js"
+    }
+  ],
+  "exposes": [
+    {
+      "path": "./App",
+      "id": "host:App",
+      "name": "App",
+      "requires": [],
+      "file": "src/App.jsx",
+      "assets": {
+        "js": {
+          "sync": [
+            "__federation_expose_App.js"
+          ],
+          "async": []
+        },
+        "css": {
+          "sync": [
+            "__federation_expose_App.css"
+          ],
+          "async": []
+        }
+      }
+    }
+  ]
+}

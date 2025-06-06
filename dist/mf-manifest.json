@@ -1,0 +1,102 @@
+{
+  "id": "host",
+  "name": "host",
+  "metaData": {
+    "name": "host",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "1.0.0",
+      "buildName": "valor-mf-host"
+    },
+    "remoteEntry": {
+      "name": "remoteEntry.js",
+      "path": "",
+      "type": "global"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "host",
+    "pluginVersion": "0.15.0",
+    "prefetchInterface": false,
+    "publicPath": "http://localhost:8080/"
+  },
+  "shared": [
+    {
+      "id": "host:react",
+      "name": "react",
+      "version": "19.1.0",
+      "singleton": true,
+      "requiredVersion": "^19.1.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "remoteEntry.js",
+            "main.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "main.css"
+          ]
+        }
+      }
+    },
+    {
+      "id": "host:react-dom",
+      "name": "react-dom",
+      "version": "19.1.0",
+      "singleton": true,
+      "requiredVersion": "^19.1.0",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "remoteEntry.js",
+            "main.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": [
+            "main.css"
+          ]
+        }
+      }
+    }
+  ],
+  "remotes": [
+    {
+      "federationContainerName": "remote",
+      "moduleName": "App",
+      "alias": "remoteApp",
+      "entry": "http://localhost:8081/remoteEntry.js"
+    }
+  ],
+  "exposes": [
+    {
+      "id": "host:App",
+      "name": "App",
+      "assets": {
+        "js": {
+          "sync": [
+            "__federation_expose_App.js"
+          ],
+          "async": []
+        },
+        "css": {
+          "sync": [
+            "__federation_expose_App.css"
+          ],
+          "async": []
+        }
+      },
+      "path": "./App"
+    }
+  ]
+}
