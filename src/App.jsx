@@ -1,32 +1,57 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, Suspense } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 
-function App() {
-	const [count, setCount] = useState(0);
+const RemoteApp = React.lazy(() => import("remoteApp/App"));
 
-	return (
-		<div className="App">
-			<div>
-				<a href="https://reactjs.org" target="_blank" rel="noreferrer">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Rspack + React (host)</h1>
-			<div className="card">
-				<button onClick={() => setCount(count => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Rspack and React logos to learn more
-			</p>
-		</div>
-	);
+function App() {
+  return (
+    <div
+      className="App"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "304px",
+      }}
+    >
+      <div>
+        <div>
+          <a
+            href="https://valor-software.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://valor-software.com/assets/QJVYZQIc-valor-software.webp"
+              alt="random"
+              style={{ width: "150px", height: "80px" }}
+            />
+          </a>
+        </div>
+        <h1>Host MF App</h1>
+        <div>
+          <a
+            className="link"
+            href="https://github.com/joaosoutto/valor-mf"
+            target="_blank"
+          >
+            <img
+              src="https://img.icons8.com/ios11/512/FFFFFF/github.png"
+              alt="github"
+              style={{ width: "40px", height: "40px" }}
+            />
+            Check Host App Github Repo
+          </a>
+        </div>
+      </div>
+      <div>
+        <Suspense fallback={<div>Loading remote component...</div>}>
+          <RemoteApp />
+        </Suspense>
+      </div>
+    </div>
+  );
 }
 
 export default App;
