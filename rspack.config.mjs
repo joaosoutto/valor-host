@@ -59,6 +59,12 @@ export default withZephyr()({
     publicPath: 'http://localhost:8080/',
     uniqueName: 'host'
   },
+  devServer: {
+    port: 8080,
+    hot: true,
+    historyApiFallback: true,
+    allowedHosts: ['localhost', '127.0.0.1', '0.0.0.0']
+  },
   plugins: [
     new ModuleFederationPlugin({
       name: 'host',
@@ -67,7 +73,7 @@ export default withZephyr()({
         './App': './src/App.jsx',
       },
       remotes: {
-       remoteApp: 'remote@http://localhost:8081/remoteEntry.js',
+       remoteApp: 'remote@https://joao-soutto-236-rspack-react-starter-valor-remote-0822415e5-ze.zephyrcloud.app/remoteEntry.js',
       },
       shared: {
         react: { singleton: true, eager: true, requiredVersion: '^19.1.0' },
