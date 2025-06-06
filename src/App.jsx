@@ -33,7 +33,7 @@ function App() {
         <div>
           <a
             className="link"
-            href="https://github.com/joaosoutto/valor-mf"
+            href="https://github.com/joaosoutto/valor-host"
             target="_blank"
           >
             <img
